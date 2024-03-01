@@ -1,0 +1,18 @@
+.skill-card {
+    perspective: 1000px; /* Perspective for 3D effect */
+    transition: transform 0.5s;
+}
+
+.skill-card:hover .skill-icon {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.skill-icon {
+    transform-style: preserve-3d; /* Preserve 3D transformations */
+}
+
+.skill-icon i {
+    position: absolute;
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+}

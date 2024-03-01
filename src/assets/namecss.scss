@@ -1,0 +1,58 @@
+
+  /* Define the gradient */
+  // $text-gradient: linear-gradient(to right, $gradient-start, $gradient-end);
+  $colors: #ec0db5, #D61C59, #1e4bbc, #d7c53b, #1B8798;
+    
+//   BODY {
+//     background: hsl(0, 0%, 96%);
+//     // background-size: .12em 100%;
+//     font: 10rem/1 Arial;
+//   }
+  
+  .text--line {
+    font-size: .6em;
+   
+    }
+  
+  svg {
+    // position: absolute;
+    // top: 20%;
+    width: 100%;
+    height: 100%;
+    }
+  
+  $max: 5;
+  $stroke-step: 7%; 
+  .text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
+    stroke-width: 2px;
+    
+    animation: stroke-offset 7s linear,fill-text 6s ease-in-out forwards;
+    
+    @for $item from 1 through $max {
+      $stroke-color: nth($colors, $item);
+      
+      &:nth-child(#{$item}) {
+        stroke: $stroke-color;
+        stroke-dashoffset: $stroke-step * $item;
+        }
+      }
+    }
+  
+  @keyframes stroke-offset {
+    50% {
+      stroke-dashoffset: $stroke-step * $max;  
+      stroke-dasharray: 0 $stroke-step * $max*2.5;
+    }
+  }
+  @keyframes fill-text {
+    0% {
+      fill: transparent;
+    }
+    100% {
+      fill:rgb(232, 228, 228);
+      stroke: none;
+    }
+  }

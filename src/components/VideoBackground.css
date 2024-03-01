@@ -1,0 +1,31 @@
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transform: scaleX(1.5);
+
+  }
+  
+  .video-background video {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+      opacity: 70%;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* color: rgb(255, 44, 44); */
+    text-align: center;
+  }
+  
