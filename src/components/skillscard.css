@@ -16,3 +16,8 @@
     transform: rotateY(0deg);
     transition: transform 0.5s;
 }
+.gradient-text {
+    background: linear-gradient(to right, #e0b9dc, #ea0295);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

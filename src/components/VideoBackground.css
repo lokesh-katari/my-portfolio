@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    transform: scaleX(1.5);
+    /* transform: scaleX(1.5); */
 
   }
   
@@ -29,3 +29,67 @@
     text-align: center;
   }
   
+/* For small screens (up to 640px) */
+/* For small screens (up to 640px) */
+@media (max-width: 640px) and (min-width: 325px){
+  .video-background {
+    /* transform: scale(2.0);
+    transform: scaleY(3.5);Adjust height to fill the viewport */
+    transform: scaleY(4.0);
+  }
+
+  .video-background video {
+
+  }
+}
+
+/* For medium screens (up to 768px) */
+@media (max-width: 768px )and( min-width: 641px) {
+  .video-background {
+    /* transform: scale(2.0);Adjust height to fill the viewport */
+   transform: scale(5.0);
+  }
+}
+@media (max-width: 324px) {
+  .video-background {
+    transform: scale(4.0)
+  }
+
+  .video-background video {
+    width: auto; /* Set width to auto */
+    height: 100%; /* Ensure the video fills the container */
+  }
+  
+}
+@media (min-width: 1024px) {
+  .video-background {
+    transform: scale(1.5);
+  }
+  .video-background video {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+      opacity: 70%;
+  }
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* color: rgb(255, 44, 44); */
+    text-align: center;
+  }
+  
+}
+@media (max-width: 1024px) and (min-width:769px) {
+  .video-background {
+   
+    transform: scaleY(3.5);
+  }
+ 
+  
+}

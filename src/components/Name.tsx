@@ -32,7 +32,7 @@ const Name = () => {
       <svg>
         <symbol id="s-text">
           <text text-anchor="middle" x="50%" y="65%" className="text--line">
-            Lokesh Katari
+            Katari
           </text>
         </symbol>
 

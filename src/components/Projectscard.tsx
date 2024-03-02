@@ -1,64 +1,47 @@
-import { ArrowUpRight } from "lucide-react";
-
+import React from "react";
+import bg from "../../public/background.png";
+import "./skillscard.css";
 interface ProjectCardProps {
-  name: string;
-  Description: string;
-  Techstack: Array<TechstackProps>;
-  GithubLink: string;
-}
-interface TechstackProps {
-  name?: string;
-  icon: JSX.Element;
+  title: string;
+  description: string;
+  githubLink: string;
+  techStack: string[];
+  imagelink?: string;
 }
 
-export function ProjectCard({
-  name,
-  Description,
-  Techstack,
-  GithubLink,
-}: ProjectCardProps) {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  description,
+  githubLink,
+  techStack,
+  imagelink,
+}) => {
   return (
-    <>
-      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-          <img
-            className="rounded-t-lg"
-            src="https://res.cloudinary.com/dp0i92tjf/image/upload/f_auto,q_auto/ikdzgxeen1x2qleldxxl"
-            alt=""
-          />
+    <div className=" w-[70vw] content-stretch   border-white border-0.5 rounded-xl overflow-hidden  shadow-md hover:shadow-lg flex  hover:scale-105 transition duration-300 ease-in-out  hover:shadow-slate-400 flex-col sm:flex-col md:flex-row lg:flex-row">
+      <div className="w-[70vw] md:w-[30vw] sm:w-[70vw] ">
+        <img
+          className="h-full w-full object-cover"
+          src={imagelink ? imagelink : bg}
+          alt="Project Thumbnail"
+        />
+      </div>
+      <div className=" flex flex-col w-[90%] m-1 ">
+        <a
+          href={githubLink}
+          className="block mt-1 text-lg leading-tight font-semibold gradient-text no-underline "
+        >
+          <h3>{title}</h3>
         </a>
-        <div className="p-5">
-          <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {name}
-            </h5>
-          </a>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {Description}
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            {GithubLink}
-            <svg
-              className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a>
+        <p className="mt-2 text-gray-100 ">{description}</p>
+        <p className="underline">tech stack</p>
+        <div className="flex flex-wrap w-full justify-center">
+          {techStack.map((tech, index) => (
+            <i key={index} className={`text-2xl text-white ${tech} mx-2 `}></i>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default ProjectCard;
