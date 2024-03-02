@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-scroll": "^1.8.10",
     "framer-motion": "^11.0.6",
     "gasp": "^0.0.2",
     "gsap": "^3.12.5",
@@ -19,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.22.2",
+    "react-scroll": "^1.9.0",
     "react-text-rotator": "^1.2.0",
     "remark-gfm": "^4.0.0",
     "typewriter-effect": "^2.21.0"

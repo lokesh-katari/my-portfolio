@@ -1,6 +1,6 @@
 import React from "react";
 import "./VideoBackground.css";
-import bg from "../assets/bgpo.mp4"; // Import CSS for styling (see below)
+import bg from "../assets/bg.mp4"; // Import CSS for styling (see below)
 
 const VideoBackground: React.FC = () => {
   return (

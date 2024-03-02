@@ -12,12 +12,24 @@
   </head>
   <style>
     body {
-      font-family: 'Yatra One', sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       background: black;
+      font-family: 'Yatra One', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
+    @media only screen and (max-width:767px){
+      html, body {
+      overflow-x: hidden;
+      width: 100vw;
+      height: 100vh;
+      margin: 0px;
+      padding: 0px;
+      scroll-behavior: smooth;
+    }
+}
   </style>
   <body>
     <div id="root"></div>

@@ -1,7 +1,8 @@
 import Home from "./components/pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/pages/Layout";
-import Projectspage from "./components/pages/Projectspage";
+import Projects from "./components/pages/Projects";
+
 function App() {
   return (
     <>
@@ -9,7 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/project" element={<Projectspage />} />
+            <Route path="/projects" element={<Projects />} />
           </Route>
         </Routes>
       </BrowserRouter>
