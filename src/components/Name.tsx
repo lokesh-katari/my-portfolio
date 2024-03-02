@@ -1,4 +1,3 @@
-import React from "react";
 import "../assets/namecss.scss";
 import { useRef, useEffect } from "react";
 const Name = () => {

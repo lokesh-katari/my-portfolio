@@ -1,5 +1,5 @@
 import Typewriter from "typewriter-effect";
-import Name from "./Name";
+
 const Main = () => {
   return (
     <>
