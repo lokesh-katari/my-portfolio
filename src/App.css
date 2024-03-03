@@ -2,3 +2,22 @@
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     }
+
+    @keyframes animate-wave {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(2px) rotate(30deg);
+        }
+      }
+      
+      .animate-wave{
+        animation: animate-wave 1.0s infinite;
+      }
+@media screen and (max-width: 768px) {
+   .name{
+         font-size: 1rem;
+   }
+    
+}

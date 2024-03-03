@@ -1,10 +1,9 @@
-import { Link } from "react-scroll";
 import "../App.css";
 const BottomNav = () => {
   return (
     <div>
       <div
-        className="fixed nav z-50 w-[90%] h-16 max-w-lg -translate-x-1/2 border border-white
+        className="fixed   z-50 w-[90%] h-16 max-w-lg -translate-x-1/2 border border-white
        rounded-full bottom-4 left-1/2 "
       >
         <div className="grid h-full max-w-lg grid-cols-5 mx-auto">

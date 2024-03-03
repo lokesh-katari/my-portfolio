@@ -1,9 +1,8 @@
-type Props = {};
 import logo from "../../public/lokesh logo.png";
 import { Link } from "react-scroll";
 import "../App.css";
 import BottomNav from "./BottomNav";
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const isDesktop = window.innerWidth >= 768;
 
   return (
@@ -15,6 +14,8 @@ const Navbar = (props: Props) => {
               <Link
                 to="home"
                 className="flex items-center space-x-3 rtl:space-x-reverse"
+                duration={500}
+                smooth
               >
                 <img src={logo} className="h-11" alt="Flowbite Logo" />
               </Link>
@@ -59,9 +60,10 @@ const Navbar = (props: Props) => {
                     <Link
                       to="home"
                       className="block py-2 px-3 text-white "
-                      aria-current="page"
+                      duration={500}
+                      smooth
                     >
-                      Home
+                      <button> Home</button>
                     </Link>
                   </li>
                   <li>
@@ -87,8 +89,14 @@ const Navbar = (props: Props) => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="#" className="block py-2 px-3 text-white">
-                      Contact
+                    <Link
+                      to="skills"
+                      duration={500}
+                      offset={-100}
+                      smooth
+                      className="block py-2 px-3 text-white"
+                    >
+                      <button>Contact</button>
                     </Link>
                   </li>
                 </ul>

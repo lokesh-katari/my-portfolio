@@ -90,6 +90,7 @@ const Projects = () => {
       <div className="flex flex-wrap justify-center gap-y-12   gap-7 items-center sm:flex-row md:items-start md:flex-row mx-auto">
         {/* <div className="mx-auto flex flex-wrap justify-center gap-7 w-full max-w-7xl items-center space-y-4 px-2 py-10"> */}
         {projects.map((project, index) => {
+          const isEven = index % 2 === 0;
           return (
             <ProjectCard
               title={project.title}
@@ -97,6 +98,7 @@ const Projects = () => {
               techStack={project.techStack}
               githubLink={project.githubLink}
               key={index}
+              isEven={isEven}
             />
           );
         })}

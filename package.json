@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/aos": "^3.0.7",
     "@types/react-scroll": "^1.8.10",
+    "aos": "^2.3.4",
     "framer-motion": "^11.0.6",
     "gasp": "^0.0.2",
     "gsap": "^3.12.5",

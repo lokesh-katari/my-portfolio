@@ -7,6 +7,7 @@ interface ProjectCardProps {
   githubLink: string;
   techStack: string[];
   imagelink?: string;
+  isEven: boolean;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,9 +16,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubLink,
   techStack,
   imagelink,
+  isEven,
 }) => {
   return (
-    <div className=" w-[70vw] content-stretch   border-white border-0.5 rounded-xl overflow-hidden  shadow-md hover:shadow-lg flex  hover:scale-105 transition duration-300 ease-in-out  hover:shadow-slate-400 flex-col sm:flex-col md:flex-row lg:flex-row">
+    <div
+      data-aos-duration={1000}
+      data-aos={isEven ? `fade-right` : "fade-left"}
+      className=" w-[70vw] content-stretch   border-white border-0.5 rounded-xl overflow-hidden  shadow-md hover:shadow-lg flex  hover:scale-105 transition duration-300 ease-in-out  hover:shadow-slate-400 flex-col sm:flex-col md:flex-row lg:flex-row"
+    >
       <div className="w-[70vw] md:w-[30vw] sm:w-[70vw] ">
         <img
           className="h-full w-full object-cover"

@@ -132,26 +132,38 @@ const Skills = () => {
     <>
       <div className=" mx-auto py-12">
         <h3 className="text-3xl mb-10 mt-6 underline">Programming languages</h3>
-        <div className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto">
+        <div
+          data-aos="zoom-out-right"
+          className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto"
+        >
           {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-10 gap-7 mx-auto"> */}
           {programmingLanguages.map((icon) => {
             return <SkillCard icon={icon.icon} name={icon.name} />;
           })}
         </div>
         <h3 className="text-3xl mb-10 mt-6 underline">Frameworks</h3>
-        <div className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto">
+        <div
+          data-aos="zoom-out-right"
+          className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto"
+        >
           {frameworks.map((icon) => {
             return <SkillCard icon={icon.icon} name={icon.name} />;
           })}
         </div>
         <h3 className="text-3xl mb-10 mt-6 underline">Tools</h3>
-        <div className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto">
+        <div
+          data-aos="zoom-out-right"
+          className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto"
+        >
           {tools.map((icon) => {
             return <SkillCard icon={icon.icon} name={icon.name} />;
           })}
         </div>
         <h3 className="text-3xl mb-10 mt-6 underline">Database</h3>
-        <div className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto">
+        <div
+          data-aos="zoom-out-right"
+          className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto"
+        >
           {databases.map((icon) => {
             return <SkillCard icon={icon.icon} name={icon.name} />;
           })}

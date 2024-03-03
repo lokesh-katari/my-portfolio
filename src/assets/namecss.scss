@@ -56,3 +56,12 @@
       stroke: none;
     }
   }
+
+  $base-font-size: 16px;
+
+  /* Define font size for different screen sizes */
+  @media screen and (max-width: 412px) {
+    .text--line {
+      font-size: .4em /* Adjust font size for smaller screens */
+    }
+  }
