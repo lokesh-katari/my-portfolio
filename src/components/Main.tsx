@@ -8,7 +8,7 @@ const Main = () => {
         style={{
           fontSize: "48px",
           fontWeight: "bold",
-          color: "#fff",
+          color: "#3D405B",
           textShadow:
             "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000",
         }}

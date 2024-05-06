@@ -1,12 +1,12 @@
 import "./skillscard.css";
 const SkillCard = ({ icon, name }: any) => {
   return (
-    <div className="mx-4 py-1 px-2 sm:w-[100px] sm:h-[100px] flex-col rounded-lg overflow-hidden  shadow-xl hover:shadow-lg flex items-center hover:scale-110 transition duration-300 ease-in-out justify-center hover:shadow-slate-400">
+    <div className="mx-4 py-1 mt-[2px] hover:shadow-cardtextsec shadow-cardtextsec shadow-md sm:rounded-lg sm:shadow-xl md:rounded-lg md:shadow-xl  px-2 sm:w-[100px] sm:h-[100px] flex-col rounded-lg overflow-hidden   hover:shadow-lg flex items-center hover:scale-110 transition duration-300 ease-in-out justify-center ">
       <i
-        className={`text-6xl  text-white ${icon} hidden sm:inline-block md:inline-block lg:inline-block `}
+        className={`text-6xl text-cardtextprim ${icon} hidden sm:inline-block md:inline-block lg:inline-block `}
       ></i>
 
-      <h3 className="text-lg font-semibold text-white m-1 ">{name}</h3>
+      <h3 className="text-lg font-semibold  m-1 text-cardtextprim ">{name}</h3>
     </div>
   );
 };
@@ -130,8 +130,11 @@ const Skills = () => {
 
   return (
     <>
-      <div className=" mx-auto py-12">
-        <h3 className="text-3xl mb-10 mt-6 underline">Programming languages</h3>
+      <div className=" mx-auto py-12 text-cardtextsec"
+      style={{
+        color:'#E07A5F'
+      }}>
+        <h3 className="text-3xl  mb-4 mt-10 underline lg:mt-10 lg:mb-6">Programming languages</h3>
         <div
           data-aos="zoom-out-right"
           className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto"
@@ -141,7 +144,7 @@ const Skills = () => {
             return <SkillCard icon={icon.icon} name={icon.name} />;
           })}
         </div>
-        <h3 className="text-3xl mb-10 mt-6 underline">Frameworks</h3>
+        <h3 className="text-3xl mb-4 mt-10 underline  lg:mt-10 lg:mb-6">Frameworks</h3>
         <div
           data-aos="zoom-out-right"
           className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto"
@@ -150,7 +153,7 @@ const Skills = () => {
             return <SkillCard icon={icon.icon} name={icon.name} />;
           })}
         </div>
-        <h3 className="text-3xl mb-10 mt-6 underline">Tools</h3>
+        <h3 className="text-3xl mb-6 mt-6 underline  lg:mt-10 lg:mb-6">Tools</h3>
         <div
           data-aos="zoom-out-right"
           className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto"
@@ -159,7 +162,7 @@ const Skills = () => {
             return <SkillCard icon={icon.icon} name={icon.name} />;
           })}
         </div>
-        <h3 className="text-3xl mb-10 mt-6 underline">Database</h3>
+        <h3 className="text-3xl mb-4 mt-10 underline  lg:mt-10 lg:mb-6">Database</h3>
         <div
           data-aos="zoom-out-right"
           className="flex flex-wrap justify-center gap-2 items-center sm:flex-row md:items-start md:flex-row mx-auto"

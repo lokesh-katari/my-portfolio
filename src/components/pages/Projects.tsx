@@ -36,7 +36,7 @@ const Projects = () => {
       imagelink: "",
     },
     {
-      title: "DNS Forwarder with Redis Cache",
+      title: "DNS Forwarder",
       description:
         "A simple and efficient DNS forwarder written in Go. Forwards DNS queries to upstream servers while caching responses in Redis for faster subsequent lookups. Aims to improve DNS performance and reduce load on upstream servers.",
       githubLink: "https://github.com/lokesh-katari/DNS-forwarder",
@@ -46,7 +46,7 @@ const Projects = () => {
     {
       title: "E-Shoppy",
       description:
-        "E-shoppy, your ultimate online shopping destination inspired by industry giants like Amazon. With a focus on user experience and innovation, E-shoppy offers a vast array of products across various categories, all in one convenient platform. From electronics to fashion, home essentials to gifts, E-shoppy aims to redefine the online shopping experience with its intuitive interface, secure transactions, and unparalleled customer service.",
+        "E-shoppy, your ultimate online shopping destination inspired by industry giants like Amazon.",
       githubLink: "https://github.com/lokesh-katari/online-shopping-app",
       techStack: [
         "devicon-nodejs-plain-wordmark",
@@ -87,7 +87,8 @@ const Projects = () => {
   ];
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-y-12   gap-7 items-center sm:flex-row md:items-start md:flex-row mx-auto">
+      <div className="flex items-stretch flex-wrap justify-center gap-y-12   gap-7 lg:items-stretch sm:items-stretch sm:flex-row md:items-stretch  md:flex-row mx-auto"
+>
         {/* <div className="mx-auto flex flex-wrap justify-center gap-7 w-full max-w-7xl items-center space-y-4 px-2 py-10"> */}
         {projects.map((project, index) => {
           const isEven = index % 2 === 0;

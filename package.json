@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.16",
     "@types/aos": "^3.0.7",
     "@types/react-scroll": "^1.8.10",
     "aos": "^2.3.4",
@@ -19,16 +22,21 @@
     "lucide-react": "^0.340.0",
     "node-sass": "^9.0.0",
     "react": "^18.2.0",
+    "react-animated-cursor": "^2.11.2",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.22.2",
     "react-scroll": "^1.9.0",
     "react-text-rotator": "^1.2.0",
+    "react-vertical-timeline-component": "^3.6.0",
     "remark-gfm": "^4.0.0",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
+    "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",

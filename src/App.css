@@ -1,6 +1,5 @@
 .nav {
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    background-color: "#F4F1DE";
     }
 
     @keyframes animate-wave {
@@ -20,4 +19,9 @@
          font-size: 1rem;
    }
     
+}
+.projectCard:hover{
+
+    box-shadow: 0 4px 6px rgb(69, 123, 157);
+  
 }

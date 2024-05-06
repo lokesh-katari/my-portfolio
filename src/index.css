@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+  --cursor-color: rgb(238, 240, 234);
+}
 .animated-text {
     font-size: 48px;
     font-weight: bold;

@@ -8,8 +8,10 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      {isDesktop ? <VideoBackground /> : <></>}
-      <div className=" bg-transparent  w-full h-full backdrop-blur-2xl">
+      
+      <div className="  w-full h-full " style={{
+        backgroundColor: "#3D405B"
+      }}>
         <Outlet />
       </div>
     </>
