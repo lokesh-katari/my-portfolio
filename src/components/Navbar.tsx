@@ -29,8 +29,8 @@ const Navbar = () => {
               <button
                   type="button"
                   className="text-texthover mr-2 hover:text-textprim hover:border-2 border-2 hover:border-texthover p-2 rounded-xl"
-                >
-                  Resume
+                ><a href="https://drive.google.com/file/d/14RD44iKczgGRHcjE_Si-GH0ZQbQeyLaw/view?usp=drive_link" target="_blank">Resume</a>
+              
                 </button>
                 <button
                   data-collapse-toggle="navbar-sticky"

@@ -13,8 +13,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import prof from '../../assets/download (1).png'
 
 const Home = () => {
-  const isDesktop = window.innerWidth >= 768;
-  let position  = isDesktop ? "top-right" : "bottom-center";
+
   useEffect(() => {
     AOS.init({ disable: "mobile" });
   }, []);
@@ -106,8 +105,8 @@ const Home = () => {
               </div>
             </div>
             <div className="w-full  lg:w-1/2">
-              <div className="mt-52  hidden md:flex md:mt-72 lg:flex justify-around  ">
-              <img className="transition duration-300 ease-in-out h-60 rounded-2xl hover:scale-105 hover:shadow-xl hover:shadow-texthover" src={prof} alt="image"  />
+              <div className="mt-52  hidden md:flex md:mt-[17rem] lg:flex justify-around  ">
+              <img className="transition duration-300 ease-in-out h-72 rounded-2xl hover:scale-105 hover:shadow-xl hover:shadow-texthover" src={prof} alt="image"  />
               </div>
             </div>
           </div>

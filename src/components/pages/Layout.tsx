@@ -1,10 +1,10 @@
 import Navbar from "../Navbar";
-import VideoBackground from "../Videobg";
+
 import { Outlet } from "react-router-dom";
 import "../VideoBackground.css";
 // import bgp from "../../../public/background.png";
 const Layout = () => {
-  const isDesktop = window.innerWidth >= 768;
+
   return (
     <>
       <Navbar />
