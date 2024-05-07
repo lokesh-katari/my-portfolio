@@ -13,12 +13,10 @@ const BottomNav = () => {
       >
         <div className="grid h-full max-w-lg grid-cols-5 mx-auto text-textprim">
           <a
-            href="#home"
+            href="https://drive.google.com/file/d/14RD44iKczgGRHcjE_Si-GH0ZQbQeyLaw/view?usp=drive_link" 
             className="inline-flex flex-col items-center justify-center px-5 rounded-s-full  group"
           >
-            <button data-tooltip-target="tooltip-home" type="button">
-              Resume
-            </button>
+            Resume
           </a>{" "}
           <a
             href="#projects"
@@ -31,7 +29,9 @@ const BottomNav = () => {
           </a>
           <div className="flex items-center justify-center">
             
+           <a href="#home">
            <Home strokeWidth={1.25} />
+           </a>
          
           </div>
           {/*  */}

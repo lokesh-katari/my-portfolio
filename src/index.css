@@ -4,7 +4,11 @@
 
 
 html {
-  --cursor-color: rgb(238, 240, 234);
+  --cursor-color: rgb(242, 204, 143);
+  @media (max-width: 768px) {
+    cursor: none;
+    
+  }
 }
 .animated-text {
     font-size: 48px;

@@ -21,23 +21,7 @@ const Home = () => {
   useEffect(() => {
     AOS.init({ disable: "mobile" });
   }, []);
-  // const StyledTooltip = styled(({ className, ...props }) => (
-  //   <Tooltip {...props} classes={{ popper: className }} />
-  // ))(({ theme }) => ({
-  //   zIndex: theme.zIndex.tooltip + 1,
-  //   //margin: 4,
-  //   [`& .MuiTooltip-tooltip`]: {
-  //     maxWidth: 200,
-  //     height: 100,
-  //     fontFamily: "'Grape Nuts', Helvetica",
-  //     backgroundColor: "rgba(255,255,0,0.4)",
-  //     //color: "deepskyblue", see sx value
-  //     margin: 4,
-  //     padding: 8,
-  //     whiteSpace: "pre-line"
-  //     //border: "solid yellow 1px"
-  //   }
-  // }));
+
 
 const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -59,7 +43,7 @@ const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
   };
   return (
     <div
-      className=" text-center pt-3  grid-bg "
+      className=" text-center  grid-bg "
       style={{
         color: "#3D405B",
       }}

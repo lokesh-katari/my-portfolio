@@ -102,7 +102,7 @@ const Navbar = () => {
                       smooth
                       className="block py-2 px-3  hover:text-texthover "
                     >
-                      <button>Contact</button>
+                      <button>Skills</button>
                     </Link>
                   </li>
               
@@ -113,15 +113,21 @@ const Navbar = () => {
         </>
       ) : (
         <>
-          <nav className=" absolute left-4 w-max z-20 top-0 start-0  mt-3 ">
-            <div className="w-4/5 flex flex-wrap bg-slate-700 items-center justify-center mx-auto p-1 border px-1 border-white rounded-full">
-              <Link
-                to="home"
+          <nav className=" fixed left-4 w-max z-20 top-0 start-0  mt-3 ">
+            <div className="w-4/5 flex flex-wrap items-center justify-center mx-auto  border border-textprim rounded-full"
+            style={{
+              backgroundColor:"#3D405B",
+              color:"#F4F1DE"
+            
+            }}>
+              <a 
+                href="#home"
                 className="flex items-center "
-                smooth
-                duration={500}
-              ></Link>
-              <img src={logo} className="h-16 w-20" alt="Flowbite Logo" />
+             
+             
+              >
+              <img src={logo} className="h-16 w-20 " alt="Flowbite Logo" />
+              </a>
             </div>
           </nav>
 
