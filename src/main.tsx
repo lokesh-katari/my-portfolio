@@ -11,15 +11,19 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         innerSize={8}
         outerSize={30}
         innerScale={1}
-        outerScale={2}
+        outerScale={1.5}
         outerAlpha={0}
         // hasBlendMode={true}
         innerStyle={{
           backgroundColor: 'var(--cursor-color)'
         }}
+        trailingSpeed={5}
         outerStyle={{
           border: '3px solid var(--cursor-color)'
         }}
+        // outerStyle={{
+        //   mixBlendMode: 'exclusion'
+        // }}
       />
   </React.StrictMode>
 );

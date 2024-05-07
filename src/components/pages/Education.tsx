@@ -26,7 +26,11 @@ const Education = () => {
       {Edu.map((education) => {
         return (
           <div className="  overflow-hidden    hover:scale-105 transition duration-300 ease-in-out ml-9 bg-cardbg text-cardtextsec hover:shadow-xl hover:shadow-cardhover  text-justify w-4/5  sm:w-full xl:w-full md:w-full lg:full m-4 max-w-sm p-6  border border-gray-200 rounded-lg shadow lg:bg-regal-blue sm:bg-regal-blue md:bg-regal-blue"
-          >
+         style={{
+            borderColor:"#E07A5F",
+          
+         }}
+         >
             <h5 className="mb-2 text-xl sm:text-sm   font-bold tracking-tight text-cardtextprim">
               {education.title}
             </h5>

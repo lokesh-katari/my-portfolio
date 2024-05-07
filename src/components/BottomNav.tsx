@@ -1,3 +1,4 @@
+import { Home } from "lucide-react";
 import "../App.css";
 const BottomNav = () => {
   return (
@@ -16,7 +17,7 @@ const BottomNav = () => {
             className="inline-flex flex-col items-center justify-center px-5 rounded-s-full  group"
           >
             <button data-tooltip-target="tooltip-home" type="button">
-              Home
+              Resume
             </button>
           </a>{" "}
           <a
@@ -29,13 +30,9 @@ const BottomNav = () => {
             </button>
           </a>
           <div className="flex items-center justify-center">
-            <button
-              data-tooltip-target="tooltip-new"
-              type="button"
-              className="inline-flex items-center justify-center w-10 h-10 font-medium rounded-full group  border border-texthover"
-            >
-              L
-            </button>
+            
+           <Home strokeWidth={1.25} />
+         
           </div>
           {/*  */}
           <a

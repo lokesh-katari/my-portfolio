@@ -15,35 +15,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   githubLink,
   techStack,
-  isEven,
+
 }) => {
   return (
-    // <div
-    //   data-aos-duration={1000}
-    //   data-aos={isEven ? `fade-right` : "fade-left"}
-    //   className="  border-white border-0.5 rounded-xl overflow-hidden  shadow-md hover:shadow-lg flex  hover:scale-105 transition duration-300 ease-in-out  hover:shadow-slate-400 flex-col sm:flex-col md:flex-row lg:flex-row"
-    // >
-    //   <div className=" flex flex-col w-[90%] m-1 ">
-    //     <a
-    //       href={githubLink}
-    //       className="block mt-1 text-lg leading-tight font-semibold gradient-text no-underline "
-    //     >
-    //       <h3>{title}</h3>
-    //     </a>
-    //     <p className="mt-2 text-gray-100 ">{description}</p>
-    //     <p className="underline">tech stack</p>
-    //     <div className="flex flex-wrap w-full justify-center">
-    //       {techStack.map((tech, index) => (
-    //         <i key={index} className={`text-2xl text-white ${tech} mx-2 `}></i>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </div>
-
     <div
-      data-aos-duration={1000}
-      data-aos={isEven ? `fade-right` : "fade-left"}
-      className="max-w-sm p-6 bg-cardbg text-cardtextprim  border  rounded-lg shadow   overflow-hidden  hover:shadow-lg   hover:scale-105 transition duration-300 ease-in-out hover:shadow-cardhover  "
+  
+      
+      className="max-w-sm p-6 bg-cardbg text-cardtextprim  border  rounded-lg shadow-lg   overflow-hidden  hover:shadow-lg   hover:scale-105 transition duration-300 ease-in-out hover:shadow-cardhover  "
+// className="  overflow-hidden    hover:scale-105 transition duration-300 ease-in-out ml-9 bg-cardbg text-cardtextprim hover:shadow-xl hover:shadow-cardhover  text-justify w-4/5  sm:w-full xl:w-full md:w-full lg:full m-4 max-w-sm p-6  border border-gray-200 rounded-lg shadow "
       style={{
         borderColor:"#E07A5F",
 

@@ -23,5 +23,15 @@
 .projectCard:hover{
 
     box-shadow: 0 4px 6px rgb(69, 123, 157);
-  
+   
+}
+
+.grid-bg{
+  background-image: url('/home/lokesh/Projects/my-portfolio/src/assets/grid.svg');
+
+  background-repeat: repeat;
+  background-size: auto;
+  /* background-position: bottom center, 50%, 50% ; */
+  /* height: 300px;
+  display: block; */
 }
