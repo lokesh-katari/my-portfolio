@@ -10,6 +10,19 @@ html {
     
   }
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html,body{
+  overflow-x  : hidden;
+}
+@media only screen and (max-width:480px) {
+  html{
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
 .animated-text {
     font-size: 48px;
     font-weight: bold;

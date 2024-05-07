@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div
   
       
-      className="max-w-sm p-6 bg-cardbg text-cardtextprim  border  rounded-lg shadow-lg   overflow-hidden  hover:shadow-lg   hover:scale-105 transition duration-300 ease-in-out hover:shadow-cardhover  "
+      className="max-w-sm p-6 w-[85%] bg-cardbg text-cardtextprim  border  rounded-lg shadow-lg   overflow-hidden  hover:shadow-lg   hover:scale-105 transition duration-300 ease-in-out hover:shadow-cardhover  "
 // className="  overflow-hidden    hover:scale-105 transition duration-300 ease-in-out ml-9 bg-cardbg text-cardtextprim hover:shadow-xl hover:shadow-cardhover  text-justify w-4/5  sm:w-full xl:w-full md:w-full lg:full m-4 max-w-sm p-6  border border-gray-200 rounded-lg shadow "
       style={{
         borderColor:"#E07A5F",
