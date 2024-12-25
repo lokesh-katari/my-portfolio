@@ -66,7 +66,7 @@ export function GridPatternDashed() {
               variants={heroContentVariants}
               className="text-5xl md:text-6xl md:w-full flex items-baseline md:gap-x-2   lg:w-max sm:w-max   text-center "
             >
-              <span className="md:text-5xl text-neutral-400"> I'm </span>
+              <span className="md:text-5xl text-neutral-400"> I&apos;m </span>
               <AnimatedShinyText>Lokesh Katari</AnimatedShinyText>
             </motion.div>
             <motion.div
