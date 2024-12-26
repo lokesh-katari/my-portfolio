@@ -57,7 +57,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Link to the favicon */}
+        <meta
+          name="description"
+          content="Portfolio of Lokeswara Rao Katari, a full-stack developer and Web3 enthusiast."
+        />
+        <meta
+          name="keywords"
+          content="Lokeswara Rao Katari, full-stack developer, Web3, blockchain, portfolio"
+        />
+        <meta name="author" content="Lokeswara Rao Katari" />
         <link rel="icon" href="/favicon.png" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
