@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 export const DATA = {
-  name: "Lokesh Katari",
+  name: "Lokeswara Rao Katari",
   initials: "LK",
   url: "https://lokeshkatari.xyz",
   location: "India",

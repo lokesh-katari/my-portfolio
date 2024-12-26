@@ -60,7 +60,7 @@ export function GridPatternDashed() {
           },
         }}
       />
-      <p className="z-10  ">
+      <div className="z-10  ">
         <div className="text-center px-4 max-w-3xl">
           <motion.div variants={heroContentVariants} className="space-y-7 ">
             <motion.div
@@ -213,7 +213,7 @@ export function GridPatternDashed() {
             </motion.div> */}
           </motion.div>
         </div>
-      </p>
+      </div>
       <GridPattern
         width={30}
         height={30}

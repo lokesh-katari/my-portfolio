@@ -46,6 +46,7 @@ export const metadata: Metadata = {
     google: "",
     yandex: "",
   },
+  // icons: ["/favicon.ico"],
 };
 
 export default function RootLayout({
@@ -55,18 +56,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-      />
-
+      <head>
+        {/* Link to the favicon */}
+        <link rel="icon" href="/favicon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+      </head>
       <body
         className={cn(
           "min-h-screen  bg-background font-sans antialiased md:max-w-3xl mx-auto py-12 sm:py-2 px-6",
           fontSans.variable
         )}
       >
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={10}>
             {children}
