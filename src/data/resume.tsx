@@ -13,7 +13,7 @@ export const DATA = {
   location: "India",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
+    "Software Engineer / New CS grad. I love building things and helping people. Very active on Twitter.",
   summary:
     "A software engineer crafting digital experiences with modern technologies.",
   avatarUrl: "/me.png",
