@@ -175,7 +175,7 @@ export function GridPatternDashed() {
                         whileTap={{ scale: 0.95 }}
                         onClick={async () => {
                           await navigator.clipboard.writeText(
-                            "npx your-portfolio"
+                            "npx lokesh-katari"
                           );
                           toast("Command copied ✨", {
                             position: "top-right",
