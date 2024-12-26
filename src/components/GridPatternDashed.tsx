@@ -11,11 +11,9 @@ import XIcon from "@mui/icons-material/X";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 import toast, { Toaster } from "react-hot-toast";
-import { LinearGradient } from "react-text-gradients";
-import AnimatedShinyText from "@/components/ui/animated-shiny-text";
-
-import ShinyText from "./ShinyText";
+import { useTheme } from "next-themes";
 import { SplitText } from "./SplitText";
+import GradientText from "./GradientText";
 
 const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -43,8 +41,25 @@ const heroContentVariants = {
 };
 
 export function GridPatternDashed() {
+  const { theme } = useTheme();
+  const colors =
+    theme === "dark"
+      ? ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]
+      : ["#ffaa40", "#9c40ff", "#ffaa40"];
+
   return (
     <div className="border-none  flex size-full items-center justify-center  overflow-hidden rounded-lg  bg-background ">
+      <Toaster
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            border: "1px solid #4F46E5",
+            padding: "16px",
+            color: "#FFFFFF",
+            backgroundColor: "#000000",
+          },
+        }}
+      />
       <p className="z-10  ">
         <div className="text-center px-4 max-w-3xl">
           <motion.div variants={heroContentVariants} className="space-y-7 ">
@@ -55,7 +70,7 @@ export function GridPatternDashed() {
               {/* <LinearGradient gradient={["to left", "#17acff ,#ff68f0"]}> */}
               <SplitText
                 text="Hello"
-                className="text-4xl   md:text-[45px] pt-2"
+                className="text-3xl   md:text-[45px] pt-2"
                 delay={300}
               />
               {/* </LinearGradient> */}
@@ -64,21 +79,29 @@ export function GridPatternDashed() {
 
             <motion.div
               variants={heroContentVariants}
-              className="text-5xl md:text-6xl md:w-full flex items-baseline md:gap-x-2   lg:w-max sm:w-max   text-center "
+              className="text-4xl lg:text-8xl md:text-7xl   md:w-full flex items-baseline md:gap-x-3  gap-x-2 lg:w-max sm:w-max   text-center "
             >
-              <span className="md:text-5xl text-neutral-400"> I&apos;m </span>
-              <AnimatedShinyText>Lokesh Katari</AnimatedShinyText>
+              <span className=" "> I&apos;m </span>
+              <GradientText
+                colors={colors}
+                // Custom gradient colors
+                animationSpeed={8} // Custom animation speed in seconds
+                showBorder={false} // Show or hide border
+                className="p-1" // Add one or more custom classes
+              >
+                Lokesh Katari
+              </GradientText>
             </motion.div>
             <motion.div
               variants={heroContentVariants}
-              className="text-md  text-gray-400   md:mx-auto px-4 sm:px-6 md:px-8 max-w-xl sm:max-w-2xl md:max-w-3xl"
+              className="text-md md:text-3xl    md:mx-auto px-4 sm:px-6 md:px-8 max-w-xl sm:max-w-2xl md:max-w-3xl"
             >
               A software engineer / Developer
             </motion.div>
 
             <motion.div
               variants={heroContentVariants}
-              className="flex justify-center items-center text-gray-400"
+              className="flex justify-center items-center text-gray-400 text-md md:text-2xl    md:mx-auto px-4 sm:px-6 md:px-8 max-w-xl sm:max-w-2xl md:max-w-3xl"
             >
               <MapPin className="mr-2 h-5 w-5" />
               <span className="pt-1 ml-1">
@@ -98,17 +121,17 @@ export function GridPatternDashed() {
               {[
                 {
                   icon: Linkedin,
-                  link: "https://www.linkedin.com/in/your-profile",
+                  link: "https://www.linkedin.com/in/lokesh-katari",
                   title: "LinkedIn",
                 },
                 {
                   icon: Github,
-                  link: "https://github.com/your-username",
+                  link: "https://github.com/lokesh-katari",
                   title: "GitHub",
                 },
                 {
                   icon: XIcon,
-                  link: "https://twitter.com/your-username",
+                  link: "https://twitter.com/lokeshkatari921",
                   title: "Twitter",
                 },
                 {
@@ -129,9 +152,9 @@ export function GridPatternDashed() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-700  dark:text-gray-300 hover:text-white transition-colors"
                   >
-                    <social.icon strokeWidth={1.5} className="h-6 w-6" />
+                    <social.icon strokeWidth={1.9} className="h-6 w-6" />
                   </motion.a>
                 </BootstrapTooltip>
               ))}
@@ -140,8 +163,8 @@ export function GridPatternDashed() {
             <motion.div variants={heroContentVariants} className="inline-block">
               <StarBorder>
                 <div className="">
-                  <div className="font-mono flex items-center space-x-4">
-                    <span className="text-gray-400">npx lokeshkatari</span>
+                  <div className="font-mono flex items-center space-x-4 ">
+                    <span className="">npx lokeshkatari</span>
                     <BootstrapTooltip
                       title="Copy command"
                       placement="top"
@@ -162,7 +185,7 @@ export function GridPatternDashed() {
                             },
                           });
                         }}
-                        className="text-gray-400 hover:text-white transition-colors"
+                        className=" hover:text-white transition-colors"
                       >
                         <ContentCopyIcon />
                       </motion.button>

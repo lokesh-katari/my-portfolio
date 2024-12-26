@@ -63,12 +63,12 @@ export default function RootLayout({
 
       <body
         className={cn(
-          "min-h-screen  bg-background font-sans antialiased md:max-w-3xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen  bg-background font-sans antialiased md:max-w-3xl mx-auto py-12 sm:py-2 px-6",
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <TooltipProvider delayDuration={0}>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <TooltipProvider delayDuration={10}>
             {children}
             <Navbar />
           </TooltipProvider>

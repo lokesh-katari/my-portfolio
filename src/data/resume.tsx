@@ -56,7 +56,7 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: "https://linkedin.com/in/lokesh-katari",
         icon: Icons.linkedin,
 
         navbar: false,
@@ -78,7 +78,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "SDE Intern",
-      logoUrl: "/atomic.png",
+      logoUrl: "/rompit.png",
       start: "Jun 2024",
       end: "Dec 2024",
       description: "worked on core projects.",
@@ -86,10 +86,10 @@ export const DATA = {
     {
       company: "BikerBuds",
       badges: [],
-      href: "https://shopify.com",
+      href: "#",
       location: "Remote",
       title: "Node.js Developer Intern",
-      logoUrl: "/shopify.svg",
+      logoUrl: "/bikerbuds.avif",
       start: "Nov 2023",
       end: "Dec 2023",
       description:
@@ -98,10 +98,10 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Turbine3 Labs",
+      school: "Turbin3 Labs",
       href: "https://turbin3.com/",
       degree: "Solana - Q4",
-      logoUrl: "/buildspace.jpg",
+      logoUrl: "/turbin3.png",
       start: "",
       end: "",
     },
@@ -109,7 +109,7 @@ export const DATA = {
       school: "GMR Institute of Technology",
       href: "https://gmrit.edu.in",
       degree: "B.Tech - Computer Science and Engineering",
-      logoUrl: "/waterloo.png",
+      logoUrl: "/gmrit.jpg",
       start: "2021",
       end: "2025",
     },
@@ -117,7 +117,7 @@ export const DATA = {
       school: "AP Residential Junior College",
       href: "#",
       degree: "Intermediate",
-      logoUrl: "/laurier.png",
+      logoUrl: "/aprjc.png",
       start: "2019",
       end: "2021",
     },
