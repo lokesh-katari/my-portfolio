@@ -75,6 +75,10 @@
   }
 }
 
+* {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer 10+ */
+}
 h3 code {
   @apply !text-lg md:!text-xl;
 }
