@@ -15,8 +15,8 @@ Thread safety ensures that multiple goroutines can safely access shared resource
 3. Atomic Operations
 4. Channels
 
-Let's implement a thread-safe counter to demonstrate these concepts.
-the below code demonstrates the implementation of a thread-safe counter using mutexes, read-write mutexes, and channels.
+Let's implement a thread-safe queue to demonstrate these concepts.
+the below code demonstrates the implementation of a thread-safe queue using mutexes, read-write mutexes, and channels.
 
 ## Implementation of concurrent thread-safe queue
 
@@ -28,7 +28,7 @@ import (
     "sync"
 )
 
-// Traditional mutex-based counter
+// Traditional mutex-based queue
 type SafeConcurrentQueue struct {
     mu    sync.Mutex
     queue []int32
@@ -57,7 +57,7 @@ func (q *SafeConcurrentQueue) Size() int{
     defer q.mu.Unlock();
     return len(q.queue);
 }
-// RW mutex-based counter for better read performance
+// RW mutex-based queue for better read performance
 type RWSafeConcurrentQueue struct {
     mu    sync.RWMutex
     queue []int32
@@ -185,7 +185,7 @@ func main() {
 1. Choose the right synchronization primitive:
    - Use `sync.Mutex` for simple exclusive access
    - Use `sync.RWMutex` when reads significantly outnumber writes
-   - Use atomic operations for simple counters and flags
+   - Use atomic operations for simple queues and flags
    - Use channels for communication between goroutines
 
 2. Always protect shared data:
