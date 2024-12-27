@@ -66,6 +66,10 @@ export default function RootLayout({
           content="Lokeswara Rao Katari, full-stack developer, Web3, blockchain, portfolio"
         />
         <meta name="author" content="Lokeswara Rao Katari" />
+        <meta
+          name="google-site-verification"
+          content="YEhLNJs7RuGc08abfa95AZ8qWHZJFMQLwl9D1ItHcok"
+        />
         <link rel="icon" href="/favicon.png" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
