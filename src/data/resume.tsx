@@ -125,8 +125,8 @@ export const DATA = {
   projects: [
     {
       title: "Code Realm",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      href: "https://github.com/lokesh-katari/Code-judge-Online",
+      dates: "Aug 2023 – May 2024",
       active: true,
       description:
         "CodeRealm is a Docker-Based Code Execution Platform that empowers users to submit, execute, and evaluate code and test cases securely. It's designed to be a dynamic and secure environment for code evaluation and execution, with a focus on system design principles and scalability.",
@@ -159,20 +159,15 @@ export const DATA = {
     {
       title: "GoSurge",
       href: "https://github.com/lokesh-katari/GoSurge",
-      dates: "June 2023 - Present",
+      dates: "Jan 2023",
       active: true,
       description:
         "GoSurge is a simple HTTP benchmarking and load testing tool written in Go. It takes advantage of Go's concurrency, supports various HTTP methods (GET, POST, PUT, DELETE), and can read URLs from files for making concurrent requests.",
       technologies: ["Docker", "Go"],
       links: [
         {
-          type: "Website",
-          href: "https://magicui.design",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
           type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
+          href: "https://github.com/lokesh-katari/GoSurge",
           icon: <Icons.github className="size-3" />,
         },
       ],
@@ -208,7 +203,7 @@ export const DATA = {
     {
       title: "LunaCred",
       href: "https://lunacred.vercel.app/",
-      dates: "April 2023 - March 2024",
+      dates: "Sep 2024 - Nov 2024",
       active: true,
       description:
         "Developed a Referral-Based Credibility Staking Protocol aimed at incentivizing honest referrals with dynamic rewards or penalties.",

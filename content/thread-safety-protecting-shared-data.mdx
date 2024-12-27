@@ -1,0 +1,158 @@
+---
+title: "Thread Safety in Go: Protecting Shared Data"
+publishedAt: "2024-12-27"
+summary: "writing thread safe code in Go"
+---
+
+# Thread Safety in Go: Protecting Shared Data
+
+## Understanding Thread Safety
+
+Thread safety ensures that multiple goroutines can safely access shared resources without causing data races or inconsistencies. In Go, we achieve this through several mechanisms:
+
+1. Mutexes
+2. Read-Write Mutexes
+3. Atomic Operations
+4. Channels
+
+Let's implement a thread-safe counter to demonstrate these concepts.
+
+## Implementation
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+    "sync/atomic"
+)
+
+// Traditional mutex-based counter
+type SafeCounter struct {
+    mu    sync.Mutex
+    value int
+}
+
+func (c *SafeCounter) Increment() {
+    c.mu.Lock()
+    defer c.mu.Unlock()
+    c.value++
+}
+
+func (c *SafeCounter) Value() int {
+    c.mu.Lock()
+    defer c.mu.Unlock()
+    return c.value
+}
+
+// RW mutex-based counter for better read performance
+type RWSafeCounter struct {
+    mu    sync.RWMutex
+    value int
+}
+
+func (c *RWSafeCounter) Increment() {
+    c.mu.Lock()
+    defer c.mu.Unlock()
+    c.value++
+}
+
+func (c *RWSafeCounter) Value() int {
+    c.mu.RLock()
+    defer c.mu.RUnlock()
+    return c.value
+}
+
+// Atomic counter for simple operations
+type AtomicCounter struct {
+    value atomic.Int64
+}
+
+func (c *AtomicCounter) Increment() {
+    c.value.Add(1)
+}
+
+func (c *AtomicCounter) Value() int64 {
+    return c.value.Load()
+}
+
+// Channel-based counter
+type ChannelCounter struct {
+    ch     chan int
+    value  int
+    done   chan struct{}
+}
+
+func NewChannelCounter() *ChannelCounter {
+    c := &ChannelCounter{
+        ch:   make(chan int),
+        done: make(chan struct{}),
+    }
+    go c.run()
+    return c
+}
+
+func (c *ChannelCounter) run() {
+    for {
+        select {
+        case <-c.ch:
+            c.value++
+        case <-c.done:
+            return
+        }
+    }
+}
+
+func (c *ChannelCounter) Increment() {
+    c.ch <- 1
+}
+
+func (c *ChannelCounter) Stop() {
+    close(c.done)
+}
+
+func main() {
+    // Example usage with multiple goroutines
+    counter := &SafeCounter{}
+    var wg sync.WaitGroup
+
+    for i := 0; i < 1000; i++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            counter.Increment()
+        }()
+    }
+
+    wg.Wait()
+    fmt.Printf("Final count: %d\n", counter.Value())
+}
+```
+
+## Best Practices
+
+1. Choose the right synchronization primitive:
+   - Use `sync.Mutex` for simple exclusive access
+   - Use `sync.RWMutex` when reads significantly outnumber writes
+   - Use atomic operations for simple counters and flags
+   - Use channels for communication between goroutines
+
+2. Always protect shared data:
+   - Keep mutex and protected data in the same struct
+   - Use `defer` for unlocking
+   - Minimize the critical section
+
+3. Consider performance implications:
+   - RWMutex has overhead compared to Mutex
+   - Channel operations are more expensive than mutex operations
+   - Atomic operations are fastest for simple cases
+
+## Common Pitfalls
+
+1. Forgetting to unlock mutexes
+2. copying mutex values instead of using pointers
+3. Holding locks during expensive operations
+4. Using mutexes when atomic operations would suffice
+
+The implementation above demonstrates these concepts with practical examples you can use in your applications.
