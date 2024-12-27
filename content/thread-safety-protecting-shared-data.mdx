@@ -1,11 +1,10 @@
 ---
 title: "Thread Safety in Go: Protecting Shared Data"
 publishedAt: "2024-12-27"
-summary: "writing thread safe code in Go"
+summary: "coding concurrent thread-safe queue in Go"
 ---
 
 # Thread Safety in Go: Protecting Shared Data 
-# by coding a concurrent queue
 
 ## Understanding Thread Safety
 
@@ -19,7 +18,7 @@ Thread safety ensures that multiple goroutines can safely access shared resource
 Let's implement a thread-safe counter to demonstrate these concepts.
 the below code demonstrates the implementation of a thread-safe counter using mutexes, read-write mutexes, and channels.
 
-## Implementation of thread-safe queue
+## Implementation of concurrent thread-safe queue
 
 ```go
 package main
