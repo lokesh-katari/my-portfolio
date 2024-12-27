@@ -4,7 +4,8 @@ publishedAt: "2024-12-27"
 summary: "writing thread safe code in Go"
 ---
 
-# Thread Safety in Go: Protecting Shared Data
+# Thread Safety in Go: Protecting Shared Data 
+# by coding a concurrent queue
 
 ## Understanding Thread Safety
 
@@ -16,6 +17,7 @@ Thread safety ensures that multiple goroutines can safely access shared resource
 4. Channels
 
 Let's implement a thread-safe counter to demonstrate these concepts.
+the below code demonstrates the implementation of a thread-safe counter using mutexes, read-write mutexes, and channels.
 
 ## Implementation
 
@@ -25,108 +27,157 @@ package main
 import (
     "fmt"
     "sync"
-    "sync/atomic"
 )
 
 // Traditional mutex-based counter
-type SafeCounter struct {
+type SafeConcurrentQueue struct {
     mu    sync.Mutex
-    value int
+    queue []int32
 }
 
-func (c *SafeCounter) Increment() {
-    c.mu.Lock()
-    defer c.mu.Unlock()
-    c.value++
+func (q *SafeConcurrentQueue) Enqueue(item int32) {
+    q.mu.Lock()
+    defer q.mu.Unlock()
+    q.queue = append(q.queue,item)
 }
 
-func (c *SafeCounter) Value() int {
-    c.mu.Lock()
-    defer c.mu.Unlock()
-    return c.value
-}
-
-// RW mutex-based counter for better read performance
-type RWSafeCounter struct {
-    mu    sync.RWMutex
-    value int
-}
-
-func (c *RWSafeCounter) Increment() {
-    c.mu.Lock()
-    defer c.mu.Unlock()
-    c.value++
-}
-
-func (c *RWSafeCounter) Value() int {
-    c.mu.RLock()
-    defer c.mu.RUnlock()
-    return c.value
-}
-
-// Atomic counter for simple operations
-type AtomicCounter struct {
-    value atomic.Int64
-}
-
-func (c *AtomicCounter) Increment() {
-    c.value.Add(1)
-}
-
-func (c *AtomicCounter) Value() int64 {
-    return c.value.Load()
-}
-
-// Channel-based counter
-type ChannelCounter struct {
-    ch     chan int
-    value  int
-    done   chan struct{}
-}
-
-func NewChannelCounter() *ChannelCounter {
-    c := &ChannelCounter{
-        ch:   make(chan int),
-        done: make(chan struct{}),
+func (q *SafeConcurrentQueue) Dequeue() int32 {
+    q.mu.Lock()
+    
+    if(len(q.queue)==0){
+        panic("empty queue");
     }
-    go c.run()
-    return c
+    defer q.mu.Unlock()
+    item := q.queue[0]
+    q.queue = q.queue[1:]
+    return item
 }
 
-func (c *ChannelCounter) run() {
+func (q *SafeConcurrentQueue) Size() int{
+    q.mu.Lock()
+    defer q.mu.Unlock();
+    return len(q.queue);
+}
+// RW mutex-based counter for better read performance
+type RWSafeConcurrentQueue struct {
+    mu    sync.RWMutex
+    queue []int32
+}
+
+func (q *RWSafeConcurrentQueue) Enqueue(item int32) {
+    q.mu.Lock()
+    defer q.mu.Unlock()
+    q.queue = append(q.queue,item)
+}
+
+func (q *RWSafeConcurrentQueue) Dequeue() int32 {
+    q.mu.Lock()
+    
+    if(len(q.queue)==0){
+        panic("empty queue");
+    }
+    defer q.mu.Unlock()
+    item := q.queue[0]
+    q.queue = q.queue[1:]
+    return item
+}
+
+func (q *RWSafeConcurrentQueue) Size() int{
+    q.mu.RLock()
+    defer q.mu.RUnlock();
+    return len(q.queue);
+}
+
+type ChannelQueue struct {
+    enqueue chan int32
+    dequeue chan int32
+    size    chan int
+    done    chan struct{}
+}
+
+func NewChannelQueue() *ChannelQueue {
+    q := &ChannelQueue{
+        enqueue: make(chan int32),
+        dequeue: make(chan int32),
+        size:    make(chan int),
+        done:    make(chan struct{}),
+    }
+    go q.run()
+    return q
+}
+
+
+func (q *ChannelQueue) run() {
+    queue := []int32{}
     for {
-        select {
-        case <-c.ch:
-            c.value++
-        case <-c.done:
-            return
+        if len(queue) == 0 {
+            select {
+            case item := <-q.enqueue:
+                queue = append(queue, item)
+            case q.size <- len(queue):
+            case <-q.done:
+                return
+            }
+        } else {
+            select {
+            case item := <-q.enqueue:
+                queue = append(queue, item)
+            case q.dequeue <- queue[0]:
+                queue = queue[1:]
+            case q.size <- len(queue):
+            case <-q.done:
+                return
+            }
         }
     }
 }
 
-func (c *ChannelCounter) Increment() {
-    c.ch <- 1
+func (q *ChannelQueue) Enqueue(item int32) {
+    q.enqueue <- item
 }
 
-func (c *ChannelCounter) Stop() {
-    close(c.done)
+func (q *ChannelQueue) Dequeue() (int32, bool) {
+    select {
+    case item := <-q.dequeue:
+        return item, true
+    default:
+        return 0, false
+    }
 }
+
+func (q *ChannelQueue) Size() int {
+    return <-q.size
+}
+
+func (q *ChannelQueue) Stop() {
+    close(q.done)
+}
+
+var wgE sync.WaitGroup
+var wgD sync.WaitGroup
 
 func main() {
     // Example usage with multiple goroutines
-    counter := &SafeCounter{}
-    var wg sync.WaitGroup
+    queue := &RWSafeConcurrentQueue{
+        queue:make([]int32,0),
+    }
+    
+    //for channel based queue implementaion
+    // queue :=NewChannelQueue();
+    
 
-    for i := 0; i < 1000; i++ {
-        wg.Add(1)
+    for i := 0; i < 100000; i++ {
+        wgE.Add(1)
         go func() {
-            defer wg.Done()
-            counter.Increment()
+            defer wgE.Done()
+            queue.Enqueue(1)
         }()
     }
 
-    wg.Wait()
-    fmt.Printf("Final count: %d\n", counter.Value())
+    wgE.Wait()
+    fmt.Printf("Final count: %d\n", queue.Size())
+        //for channel based queue implementaion
+    // queue.Stop()
 }
 ```
 
