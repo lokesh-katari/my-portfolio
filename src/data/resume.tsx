@@ -153,8 +153,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "/coderealm.mp4",
+      image: "/coderealm.gif",
+      video: "",
     },
     {
       title: "GoSurge",
@@ -171,8 +171,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "/gosurge.mp4",
+      image: "/gosurge.gif",
+      video: "",
     },
     {
       title: "VerifEd",
@@ -197,8 +197,8 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
-      video: "/videoplayback-verifed.mp4",
+      image: "/verifed.gif",
+      video: "",
     },
     {
       title: "LunaCred",
