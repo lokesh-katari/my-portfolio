@@ -230,6 +230,17 @@ export const DATA = {
   ],
   hackathons: [
     {
+      title: "EasyA Consensus Hackathon",
+      dates: "February 18th - 19th, 2025",
+      location: "Hongkong",
+      description:
+        "Built an Decentralised Sports Betting app on Aptos supported by ElizaOS AI Agents for on chain transactions ..",
+      image:
+        "https://logos.bugcrowdusercontent.com/logos/e17e/ae4b/4e04d870/a6fc936fd1997f3d47d9e86a00982f28_Coindesk.jpg",
+
+      links: [],
+    },
+    {
       title: "OneBlock+ Polkadot Hackathon",
       dates: "November 23rd - 25th, 2024",
       location: "Bangkok, thailand",
